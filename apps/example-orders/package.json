@@ -12,6 +12,7 @@
   "dependencies": {
     "@eventspindle/automation-local": "workspace:*",
     "@eventspindle/core": "workspace:*",
+    "@eventspindle/eventstore": "workspace:*",
     "@eventspindle/eventstore-memory": "workspace:*",
     "@eventspindle/projection-memory": "workspace:*"
   }
