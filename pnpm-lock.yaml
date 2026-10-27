@@ -59,6 +59,9 @@ importers:
       '@eventspindle/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@eventspindle/eventstore':
+        specifier: workspace:*
+        version: link:../../packages/eventstore
       '@eventspindle/eventstore-memory':
         specifier: workspace:*
         version: link:../../packages/eventstore-memory
@@ -111,7 +114,14 @@ importers:
         specifier: workspace:*
         version: link:../projection-core
 
-  packages/core: {}
+  packages/core:
+    dependencies:
+      ajv:
+        specifier: 8.20.0
+        version: 8.20.0
+      canonicalize:
+        specifier: 2.1.0
+        version: 2.1.0
 
   packages/eventstore:
     dependencies:
@@ -1111,6 +1121,10 @@ packages:
   cac@7.1.0:
     resolution: {integrity: sha512-LMDU/U2yA4IPIY8KT0NsNPWEYZvAMkbgyspxJ6btJaYV+WMDOHAZCmB0lsTObiHaRS1V/ztKAl7+TSkTqXyeoA==}
     engines: {node: '>=20.19.0'}
+
+  canonicalize@2.1.0:
+    resolution: {integrity: sha512-F705O3xrsUtgt98j7leetNhTWPe+5S72rlL5O4jA1pKqBVQ/dT1O1D6PFxmSXvc0SUOinWS57DKx0I3CHrXJHQ==}
+    hasBin: true
 
   chai@6.3.0:
     resolution: {integrity: sha512-XWAtwJ6OHO+tj0EKCs0Y2UamnyOxseZWltU4x2U2wh8g4AigdjwvtUjvLP2tqkA/avxHEtzxNaqGq/YGNwckKg==}
@@ -2336,6 +2350,8 @@ snapshots:
       ieee754: 1.2.1
 
   cac@7.1.0: {}
+
+  canonicalize@2.1.0: {}
 
   chai@6.3.0: {}
 

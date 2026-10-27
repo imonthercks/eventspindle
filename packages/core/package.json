@@ -17,5 +17,8 @@
     "lint": "oxlint --type-aware src tests",
     "test": "vitest run"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ajv": "8.20.0",
+    "canonicalize": "2.1.0"
+  }
 }

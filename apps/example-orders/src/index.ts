@@ -1,2 +1,4 @@
-/** Domain scenarios and HTTP application will be implemented in M1/M2. */
+export * from './domain/orders';
+export * from './domain/schemas';
+
 export const applicationName = 'example-orders' as const;
