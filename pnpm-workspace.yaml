@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+  - 'infra'
+# pnpm 10 build-script security policy. Expand only as reviewed/needed.
+allowBuilds:
+  nx: true
+  esbuild: true

@@ -1,0 +1,27 @@
+{
+  "slices": [
+    {
+      "id": "place-order", "title": "Place Order", "context": "sales", "sliceType": "STATE_CHANGE",
+      "commands": [{ "id": "place-order-command", "title": "Place Order", "type": "COMMAND", "fields": [{ "name": "orderId", "type": "String" }, { "name": "customerId", "type": "String" }], "dependencies": [] }],
+      "events": [{ "id": "order-placed", "title": "Order Placed", "type": "EVENT", "fields": [{ "name": "orderId", "type": "String" }, { "name": "customerId", "type": "String" }], "dependencies": [] }],
+      "readmodels": [], "screens": [], "processors": [], "tables": [], "specifications": []
+    },
+    {
+      "id": "order-status", "title": "Order Status", "context": "sales", "sliceType": "STATE_VIEW",
+      "commands": [], "events": [],
+      "readmodels": [{ "id": "order-status-view", "title": "Order Status", "type": "READMODEL", "fields": [{ "name": "status", "type": "String" }], "dependencies": [] }],
+      "screens": [], "processors": [], "tables": [], "specifications": []
+    },
+    {
+      "id": "fulfill-order", "title": "Fulfill Order", "context": "sales", "sliceType": "AUTOMATION",
+      "commands": [], "events": [], "readmodels": [], "screens": [],
+      "processors": [{ "id": "fulfill-order-processor", "title": "Fulfill Order", "type": "AUTOMATION", "fields": [], "dependencies": [] }],
+      "tables": [], "specifications": []
+    },
+    {
+      "id": "shipment-webhook", "title": "Shipment Webhook", "context": "sales", "sliceType": "TRANSLATION",
+      "commands": [{ "id": "confirm-shipment", "title": "Confirm Shipment", "type": "COMMAND", "fields": [{ "name": "orderId", "type": "String" }], "dependencies": [] }],
+      "events": [], "readmodels": [], "screens": [], "processors": [], "tables": [], "specifications": []
+    }
+  ]
+}

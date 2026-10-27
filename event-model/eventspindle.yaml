@@ -1,0 +1,10 @@
+# DRAFT registry. Deploying these to Dev does NOT count as a slice release.
+# Official model is in model.json; EventSpindle metadata stays separate.
+boundedContext: sales
+model: ./model.json
+slices:
+  place-order: { draftVersion: 1 }
+  order-status: { draftVersion: 1 }
+  fulfill-order: { draftVersion: 1 }
+  shipment-webhook: { draftVersion: 1 }
+# A protected CI release operation, not this file, creates immutable release records.

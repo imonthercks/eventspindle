@@ -1,0 +1,15 @@
+{
+  "name": "@eventspindle/infra",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "oxlint --type-aware bin lib",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@eventspindle/aws-cdk": "workspace:*"
+  }
+}

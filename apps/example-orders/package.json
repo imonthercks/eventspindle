@@ -1,0 +1,18 @@
+{
+  "name": "@eventspindle/example-orders",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "oxlint --type-aware src tests",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@eventspindle/automation-local": "workspace:*",
+    "@eventspindle/core": "workspace:*",
+    "@eventspindle/eventstore-memory": "workspace:*",
+    "@eventspindle/projection-memory": "workspace:*"
+  }
+}

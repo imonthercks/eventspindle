@@ -1,0 +1,64 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      "{workspaceRoot}/pnpm-lock.yaml",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/.oxlintrc.json",
+      "{workspaceRoot}/.oxfmtrc.json"
+    ],
+    "modelInputs": [
+      "{workspaceRoot}/event-model/**/*",
+      "{workspaceRoot}/schemas/**/*",
+      "{workspaceRoot}/scripts/**/*",
+      "{workspaceRoot}/pnpm-lock.yaml"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "model:validate": {
+      "cache": true,
+      "inputs": ["modelInputs"]
+    },
+    "model:generate": {
+      "cache": false
+    },
+    "infra:synth": {
+      "cache": false
+    },
+    "infra:deploy:dev": {
+      "cache": false
+    },
+    "infra:destroy:dev": {
+      "cache": false
+    },
+    "db:migrate:dev": {
+      "cache": false
+    },
+    "smoke:aws": {
+      "cache": false
+    },
+    "slice:release": {
+      "cache": false
+    }
+  },
+  "analytics": false
+}
